@@ -1,0 +1,432 @@
+
+/*body {
+    -webkit-touch-callout: none;                 prevent callout to copy image, etc when tap to hold 
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit 
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' 
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* Portrait layout (default) 
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px 
+    position:absolute;             /* position in the center of the screen 
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height 
+    width:225px;                   /* text area width 
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) 
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height 
+                                   /* offset horizontal: half of text area width 
+}
+
+/* Landscape layout (with min-width)
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height 
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height 
+                                      /* offset horizontal: half of image width and text area width 
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+ 
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+*/
+
+
+html, body{
+    height: 100%;
+}
+
+.preloader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10000;
+    background: #fff;
+    transition: all 50ms ease;
+    padding-top: 25%;
+}
+
+.hide-preloader{
+    visibility: hidden;
+}
+
+.navbar{
+    box-shadow: 0px 0px 5px #333;
+}
+
+.side-bar{
+    background: rgba(0,0,0,0.2);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    z-index: 1000;
+}
+
+button{
+    outline: 0px !important;
+}
+
+.main-side-bar{
+    background: #222;
+    display: inline-block;
+    min-height: 100%;
+    width: 300px;
+    box-shadow: 1px 0px 3px #000;
+}
+
+.handle{
+    background: #222;
+}
+
+.icon-bar{
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: red;
+    margin-top: 4px;
+}
+
+.show-side-bar{
+    background: #222;
+    border: none;
+    outline: 0px !important;
+    padding: 10px;
+    margin-left: 10px;
+    margin: 10px;
+}
+
+
+.hide-side-bar{
+    background: #333;
+    outline: 0px !important;
+    border: none;
+    padding: 20px 10px;
+    margin: 10px;
+}
+
+.side-bar-menu{
+    border-top: 10px solid #000;
+    min-height: 800px;
+}
+
+
+.side-bar-menu ul li {
+    list-style: none;
+    margin-left: -40px;
+}
+
+
+.side-bar-menu ul li a{
+    display: block;
+    background: #000;
+    padding: 20px;
+    color: #fff;
+}
+
+.side-bar-menu ul li a:hover, .side-bar-menu ul li a:focus{
+    border-left: 4px solid red;
+    text-decoration: none;
+}
+
+.on{
+    border-left: 4px solid red;
+}
+
+.one{
+    transform: rotate(45deg);
+    display: block;
+    width: 25px;
+    height: 2px;
+    border-radius: 1px;
+    background: red;
+}
+
+.two{
+    transform: rotate(-45deg);
+    display: block;
+    width: 25px;
+    height: 2px;
+    border-radius: 1px;
+    background: red;
+    margin-top: -2px;
+}
+
+.first-form, .second-form{
+    display: inline-block;
+    width: 50%;
+    margin-top: 100px;
+}
+
+
+.form-control{
+    border: 1px solid #46b8da;
+    box-shadow: none;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.btn{
+    outline: 0px !important;
+}
+
+.er{
+    background: red;
+    height: 50px;
+    display: inline-block;
+    width: 100%;
+    border-left: 4px solid pink;
+    visibility: hidden;
+    color: #fff;
+}
+
+
+.handle{
+    height: 60px;
+    background: #333;
+}
+
+.user-image-space{
+    background: url('../image/1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 220px;
+    box-shadow: 1px 0px 3px #000;
+    padding: 10px;
+}
+
+
+.logo-name{
+    font-size: 30px;
+    padding: 10px;
+    color: #fff;
+    padding: 15px;
+    display: inline-block;
+}
+
+.user-picture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+.nav-tool{
+    background: #fff;
+    width: 250px;
+    box-shadow: 2px 2px 5px #000;
+    position: fixed;
+    top: 60px;
+    padding: 10px 0px;
+    display: block;
+    transition: all 2s ease;
+}
+
+
+.nav-tool p a{
+    width: 100%;
+    padding: 10px;
+    display: block;
+    color: #000;
+}
+
+
+.nav-tool p a:focus, .nav-tool p a:hover{
+    background: #ccc;
+    color: #000;
+    text-decoration: none;
+}
+
+.notif{
+    background: #222;
+    border: none;
+    padding: 10px;
+}
+
+
+.notif span{
+    color: #fff;
+    background: red;
+}
+
+.tool-btn{
+    position: absolute;
+    right: 0px;
+    background: #222;
+    border: none;
+    outline: 0px !important;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin: 5px 10px;
+    color: red;
+    transform: rotate(90deg);
+}
+
+.tool-btn:before{
+    content: '\E8D5';
+    font-family: 'Material Icons';
+    font-size: 26px;
+}
+
+.hide-nav-tool{
+    right: -400px;
+    transition: all 800ms ease;
+}
+
+
+.show-nav-tool{
+    right: 0px;
+    transition: all 800ms ease;
+}
+
+.user-email, .username, .user-phone{
+    color: #fff;
+    margin-top: -14px;
+}
+
+.user-email, .user-phone{
+    font-size: 12px;
+}
+
+.no-p{
+    padding: 0px;
+}
+
+
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus{
+    background: #d9534f;
+    border-color: #d43f3a;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before{
+    background: #d43f3a;
+}
+
+
+.nt{
+    position: relative;
+    top: -8px;
+}
+
+.num_group{
+    border: 1px solid #000;
+    height: 100px;
+}
+
+
+
+
+.panel-group .panel ul li{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.panel-group .panel ul li:hover{
+    background: #eee;
+}
+
+
+.panel-group .panel ul{
+    margin-left: -10px;
+    padding: 0px;
+}
+
+#profile_image{
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+#output{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+.user-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+
+.chat-box{
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px !important;
+}
+

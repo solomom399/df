@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	if (localStorage.getItem('login') != null) {
+		localStorage.removeItem('login')
+		localStorage.removeItem('user-email')
+		localStorage.removeItem('user-phone')
+		localStorage.removeItem('username')
+		localStorage.removeItem('user-image')
+        location.href = '../'
+    }
+</script>

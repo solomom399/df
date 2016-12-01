@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>TLT</title>
+</head>
+
+<body>
+    <div class="sign-in-up-form">
+        <center>
+
+            <form class="first-form" method="POST">
+                <span class="er"></span>
+                <fieldset>
+                    <legend>Login</legend>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Passowrd">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-default form-control login">Login</button>
+                    </div>
+                    <p><a href="data/signup.html">Join</a></p>
+                </fieldset>
+            </form>
+        </center>
+    </div>
+    
+
+
+
+
+
+
+    <footer>
+        <center>
+            <p>&#169 2016 Vision Team, made with love for a better web</p>
+        </center>
+    </footer>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        if (localStorage.getItem('login') != null) {
+            location.href = 'data/profile.html'
+        }
+    </script>
+</body>
+
+</html>
