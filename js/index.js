@@ -1,5 +1,5 @@
-var path = "http://localhost:2200/tlt-server/"
-//var path = "http://everymantechnologies.com/tlt-server/"
+//var path = "http://localhost:2200/tlt-server/"
+var path = "http://everymantechnologies.com/tlt-server/"
 var users = []
 var all_users = []
 var usernames = ""
